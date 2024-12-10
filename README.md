@@ -58,5 +58,6 @@ Cette API offre les fonctionnalités suivantes :
 ### Étape 1 : Cloner le dépôt
 
 ```bash
-git clone <url_du_dépôt>
 cd <dossier_du_projet>
+git clone <url_du_dépôt>
+
