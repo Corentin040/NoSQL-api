@@ -26,7 +26,7 @@ Cette API offre les fonctionnalités suivantes :
 - Mettre à jour les informations sur un film à partir de son titre.
 - Renvoyer le nombre de films communs entre la base de données MongoDB et la base de données neo4j.
 - Lister les utilisateurs qui ont évalué un film, à partir du titre d'un filtre.
-- Retourner un utilisateur avec le nombre de films qu'il a notés et la liste des films notés, à partir du nom de l'acteur.
+- Retourner un utilisateur avec le nombre de films qu'il a notés et la liste des films notés, à partir du nom d'un utilisateur.
 
 ---
 
