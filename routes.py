@@ -118,7 +118,7 @@ def list_users_who_rated_movie(title: str, request: Request):
         return {"search title": title, "movies": response}
 
 # Route pour lister les films évalués par un utilisateur donné
-@router.get("/users/{name}/rated-movies")
+@router.get("/users/{name}/rated-movies", response_description="Retourner le nombre de film et la liste des films noté par un utilisateur donné)
 def get_user_rated_movies(name: str, request: Request):
     # Exécuter une requête dans Neo4j pour récupérer les films évalués par l'utilisateur
     with request.app.neo4j_driver.session() as session:
