@@ -21,12 +21,12 @@ Ce projet est une application Python permettant de gérer et d'analyser des donn
 ## Introduction
 
 Cette API offre les fonctionnalités suivantes :
-- Récupérer une liste de films.
-- Rechercher un film ou un acteur.
-- Mettre à jour les informations sur un film.
-- Analyser les données communes entre MongoDB et Neo4j.
-- Obtenir la liste des utilisateurs ayant noté un film.
-- Récupérer les informations détaillées sur un utilisateur, y compris les films notés.
+- Lister tous les films.
+- Donner les détails d'un film spécifique, à partir de son titre ou du nom d'un acteur
+- Mettre à jour les informations sur un film à partir de son titre.
+- Renvoyer le nombre de films communs entre la base de données MongoDB et la base de données neo4j.
+- Lister les utilisateurs qui ont évalué un film, à partir du titre d'un filtre.
+- Retourner un utilisateur avec le nombre de films qu'il a notés et la liste des films notés, à partir du nom de l'acteur.
 
 ---
 
