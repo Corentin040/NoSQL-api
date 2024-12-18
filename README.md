@@ -1,66 +1,47 @@
-# API de Gestion des Films - Final Lab
+# API de Gestion des Films - Dernier TPs
 
-Ce projet est une application Python permettant de gérer et d'analyser des données sur les films et les utilisateurs en utilisant les bases de données **MongoDB** et **Neo4j**. L'API REST, implémentée avec **FastAPI**, permet de réaliser des opérations CRUD ainsi que des analyses croisées sur les données.
+Cette application FastAPI permet d'interagir avec des bases de données MongoDB et Neo4j afin de proposer des API pour accéder aux données des films et des personnes. Elle inclut des fonctionnalités pour interroger les films communs, récupérer les utilisateurs ayant noté des films spécifiques et consulter les détails des évaluations des utilisateurs.
 
 ---
 
 ## Table des Matières
 
-1. [Introduction](#introduction)
-2. [Fonctionnalités](#fonctionnalités)
-3. [Technologies Utilisées](#technologies-utilisées)
-4. [Installation](#installation)
-5. [Utilisation](#utilisation)
-6. [Endpoints de l'API](#endpoints-de-lapi)
-7. [Tests](#tests)
-8. [Exemple avec Postman](#exemple-avec-postman)
-9. [Structure du Projet](#structure-du-projet)
-
----
-
-## Introduction
-
-Cette API offre les fonctionnalités suivantes :
-- Lister tous les films.
-- Donner les détails d'un film spécifique, à partir de son titre ou du nom d'un acteur
-- Mettre à jour les informations sur un film à partir de son titre.
-- Renvoyer le nombre de films communs entre la base de données MongoDB et la base de données neo4j.
-- Lister les utilisateurs qui ont évalué un film, à partir du titre d'un filtre.
-- Retourner un utilisateur avec le nombre de films qu'il a notés et la liste des films notés, à partir du nom d'un utilisateur.
+1. [Fonctionnalités](#fonctionnalités)
+2. [Prérequis](#prérequis)
+3. [Lancement](#lancement)
+4. [Scénarios de test](#scénarios-de-test)
 
 ---
 
 ## Fonctionnalités
 
-- **Intégration MongoDB** : Stockage et récupération des données liées aux films.
-- **Intégration Neo4j** : Analyse des relations utilisateurs-films.
-- **Exécution Locale** : L'application fonctionne sur votre machine.
-- **API REST** : Points d'accès faciles à utiliser pour exploiter les fonctionnalités.
+Cette API offre les fonctionnalités suivantes :
+- Lister tous les films.
+    `GET /` 
+- Donner les détails d'un film spécifique, à partir de son titre ou du nom d'un acteur `GET /search?title="nom_film"` ou `GET /search?actor="nom_acteur"`
+- Mettre à jour les informations sur un film à partir de son titre. `PUT /{title}`
+- Renvoyer le nombre de films communs entre la base de données MongoDB et la base de données neo4j. `GET /common-movies`
+- Lister les utilisateurs qui ont évalué un film, à partir du titre d'un filtre. `GET /movies/{title}/users`
+- Retourner un utilisateur avec le nombre de films qu'il a notés et la liste des films notés, à partir du nom d'un utilisateur. `GET /users/{name}/rated-movies`
 
----
-
-## Technologies Utilisées
-
-- Python 3.8
-- FastAPI
-- MongoDB
-- Neo4j
 ---
 
 ## Prérequis
 
-- Avoir Python 3.8 (version minimum) installé sur votre machine.
-- Avoir l'instance MongoDB avec la collection movies.
-- Avoir l'instance Neo4j avec les relations nécessaires.
----
-
-## Installation 
-
-GIT ect ect
+- Python 3.8 ou version supérieure
+- Une instance MongoDB avec une collection "movies"
+- Une instance Neo4j contenant les nœuds "Person" et "Movie", ainsi que des relations "REVIEWED"
+- pip est installée pour la gestion des packages python
+- Avoir installé ces dépendances en local : pymongo pydantic, pydantic_mongo, fastapi[all], python-dotenv, neo4j
 
 ---
 
 ## Lancement 
+0. Clonage du projet en local
+```bash
+git clone https://github.com/Corentin040/NoSQL-api.git
+```
+
 1. Démarrez les serveurs **MongoDB** et **Neo4j** s'ils ne sont pas déjà en cours d'exécution.
 
 2. Pour lancer l'application FastAPI, exécutez, en se plaçant dans le fichier contenant vos fichier .py :
